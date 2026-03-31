@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
@@ -15,12 +17,13 @@ import { DoughnutChart } from "./DoughnoutChart";
 // const labels = watchlist.map((subArray) => subArray["name"]);
 
 const WatchList = () => {
-
   const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
     const fetchWatchlist = async () => {
-      const res = await axios.get("https://zerodha-clone-backend-sztq.onrender.com/market/watchlist");
+      const res = await axios.get(
+        "https://zerodha-clone-backend-sztq.onrender.com/market/watchlist",
+      );
       setWatchlist(res.data);
     };
 
@@ -55,7 +58,6 @@ const WatchList = () => {
       },
     ],
   };
-
 
   return (
     <div className="watchlist-container">
@@ -120,7 +122,6 @@ const WatchListActions = ({ uid }) => {
     generalContext.openBuyWindow(uid);
   };
 
-
   return (
     <span className="actions">
       <span>
@@ -129,17 +130,15 @@ const WatchListActions = ({ uid }) => {
           placement="top"
           arrow
           TransitionComponent={Grow}
-          onClick={handleBuyClick}
-        >
+          onClick={handleBuyClick}>
           <button className="buy">Buy</button>
         </Tooltip>
-        
+
         <Tooltip
           title="Analytics (A)"
           placement="top"
           arrow
-          TransitionComponent={Grow}
-        >
+          TransitionComponent={Grow}>
           <button className="action">
             <BarChartOutlined className="icon" />
           </button>
