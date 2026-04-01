@@ -25,7 +25,7 @@ const ProtectedRoute = ({ children }) => {
   if (loading) return <div>Loading...</div>;
 
   if (!authorized) {
-    window.location.href = "http://localhost:3000/login";
+    window.location.href = "https://zerodha-clone-frontend-1j7w.vercel.app/login";
     return null;
   }
 

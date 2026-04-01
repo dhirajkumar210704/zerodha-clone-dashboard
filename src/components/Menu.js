@@ -16,7 +16,7 @@ const Menu = () => {
         { withCredentials: true },
       );
 
-      window.location.href = "http://localhost:3000/login";
+      window.location.href = "https://zerodha-clone-frontend-1j7w.vercel.app/login";
     } catch (err) {
       console.log("Logout failed");
     }
